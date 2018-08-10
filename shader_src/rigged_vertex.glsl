@@ -1,9 +1,14 @@
 
 #version 120
 
+#pragma import_defines(MAX_BONE_COUNT)
+#ifndef MAX_BONE_COUNT
+#   define MAX_BONE_COUNT 64
+#endif
+
 attribute vec4 influencingBones;
 attribute vec4 vertexWeights;
-uniform mat4 bones[64];
+uniform mat4 bones[MAX_BONE_COUNT];
 
 // output for fragment shader
 varying vec3 vertexNormal;

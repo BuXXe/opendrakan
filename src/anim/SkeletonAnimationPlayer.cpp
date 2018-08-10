@@ -142,6 +142,7 @@ namespace od
 		mRiggingProgram = mEngine.getShaderManager().makeProgram(riggingShader, nullptr);
 		mRiggingProgram->addBindAttribLocation("influencingBones", OD_ATTRIB_INFLUENCE_LOCATION);
 		mRiggingProgram->addBindAttribLocation("vertexWeights", OD_ATTRIB_WEIGHT_LOCATION);
+		mObjectRoot->getOrCreateStateSet()->setDefine("MAX_BONE_COUNT", OD_MAX_BONE_COUNT);
 		mObjectRoot->getOrCreateStateSet()->setAttribute(mRiggingProgram, osg::StateAttribute::ON);
 		mObjectRoot->getOrCreateStateSet()->addUniform(mBoneMatrixArray, osg::StateAttribute::ON);
 
